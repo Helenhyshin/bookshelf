@@ -12,14 +12,14 @@ function Cards(props) {
     <>
       {props.bookList.map((book) => (
         <Card className="card">
-          <CardHeader title="The Giving Tree" />
+          <CardHeader title={book.title} />
           <CardMedia
             className="card-img"
             component="img"
-            alt="Tree"
+            alt="Book"
             height="300"
             image={book.image}
-            title="The Giving Tree"
+            title={book.title}
           />
           <CardContent className="card-content">
             <Typography variant="body2" color="textSecondary" component="p">
