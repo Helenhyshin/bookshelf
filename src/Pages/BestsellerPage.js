@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Card from "../Card/Card";
-import "./Bestseller.css";
+import React, { useState } from "react";
+import Card from "../components/Card/Card.js";
 
-function Bestseller() {
+const BestsellerPage = () => {
   const [bookList, setBookList] = useState([
     {
       title: "The Giving Tree",
@@ -63,22 +62,17 @@ function Bestseller() {
   ]);
 
   return (
-    <div className="nyt-bestseller">
-      <h1>NYTimes Bestseller</h1>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          {bookList.map((book) => (
-            <Card
-              title={book.title}
-              image={book.image}
-              author={book.author}
-              genre={book.genre}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+    <>
+      {bookList.map((book) => (
+        <Card
+          title={book.title}
+          image={book.image}
+          author={book.author}
+          genre={book.genre}
+        />
+      ))}
+    </>
   );
-}
+};
 
-export default Bestseller;
+export default BestsellerPage;

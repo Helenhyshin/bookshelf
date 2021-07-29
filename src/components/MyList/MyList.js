@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import "./Bestseller.css";
+import "./MyList.css";
 
-function Bestseller() {
+function MyList() {
   const [bookList, setBookList] = useState([
     {
       title: "The Giving Tree",
@@ -62,9 +62,10 @@ function Bestseller() {
     },
   ]);
 
+  //   there is a giant gap between the MyList div and the Bestseller div
   return (
-    <div className="nyt-bestseller">
-      <h1>NYTimes Bestseller</h1>
+    <div className="my-list">
+      <h1>My List</h1>
       <div class="carousel-container">
         <div class="carousel-slide">
           {bookList.map((book) => (
@@ -81,4 +82,4 @@ function Bestseller() {
   );
 }
 
-export default Bestseller;
+export default MyList;
