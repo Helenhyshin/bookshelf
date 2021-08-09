@@ -1,14 +1,18 @@
-// API EXAMPLE:
-// const IMAGE_LIST_BASE_URL = "https://picsum.photos/v2/list";
+const NYTIMES_BASE_URL = "https://api.nytimes.com/svc/books/v3/lists/current/";
 
-// export const fetchImages = async (pageNum = 1, limit = 30) => {
-//   const endpoint = `${IMAGE_LIST_BASE_URL}?page=${pageNum}&limit=${limit}`;
-//   return await fetch(endpoint).then((res) => res.json());
-// };
+export const fetchHCFictionBestseller = async (genre = "hardcover-fiction") => {
+  const endpoint = `${NYTIMES_BASE_URL}${genre}.json?api-key=${process.env.REACT_APP_API_KEY}`;
+  return await fetch(endpoint).then((res) => res.json());
+};
 
+export const fetchHCNonfictionBestseller = async (
+  genre = "hardcover-nonfiction"
+) => {
+  const endpoint = `${NYTIMES_BASE_URL}${genre}.json?api-key=${process.env.REACT_APP_API_KEY}`;
+  return await fetch(endpoint).then((res) => res.json());
+};
 
-// https://api.nytimes.com/svc/books/v3/lists/current?api-key=wHKtBzoztoNakB25GDO5fnMPaSqfNuIO
-
-https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=wHKtBzoztoNakB25GDO5fnMPaSqfNuIO
-
-https://api.nytimes.com/svc/books/v3/lists/current/best-sellers.json?api-key=wHKtBzoztoNakB25GDO5fnMPaSqfNuIO
+export const fetchPictureBestseller = async (genre = "picture-books") => {
+  const endpoint = `${NYTIMES_BASE_URL}${genre}.json?api-key=${process.env.REACT_APP_API_KEY}`;
+  return await fetch(endpoint).then((res) => res.json());
+};
