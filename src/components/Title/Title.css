@@ -1,5 +1,4 @@
 .title {
-  background-color: blue;
   height: 300px;
   background-image: url("https://i.pinimg.com/originals/27/f9/5d/27f95d0c235dbdd60ac5012a05facfd0.jpg");
   position: absolute;
@@ -8,6 +7,28 @@
 }
 
 .title-form {
-  margin-top: 200px;
+  margin-top: 250px;
   z-index: 1;
+}
+
+input {
+  height: 35px;
+  width: 500px;
+  margin: 0 15px;
+}
+
+button {
+  height: 35px;
+  width: 160px;
+  text-align: center;
+  background-color: #e5bab1;
+  color: white;
+  padding: 8px;
+  border-radius: 20px;
+  border: white;
+  font-weight: 900;
+}
+
+button:hover {
+  background-color: #c9a49c;
 }

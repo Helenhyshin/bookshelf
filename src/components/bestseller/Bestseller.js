@@ -11,17 +11,31 @@ function Bestseller() {
   useEffect(() => {
     // setBookList(fetchNYTimesBestseller)
     fetchHCFictionBestseller().then((res) =>
-      setFictionBookList(res.results.books)
+      setFictionBookList(colorSet(res.results.books))
     );
 
     fetchHCNonfictionBestseller().then((res) =>
-      setNonFictionBookList(res.results.books)
+      setNonFictionBookList(colorSet(res.results.books))
     );
 
     fetchPictureBestseller().then((res) =>
-      setPictureBookList(res.results.books)
+      setPictureBookList(colorSet(res.results.books))
     );
   }, []);
+
+  function colorSet(books) {
+    let colorArr = ["#E6F4FB", "#F9CBB2", "#D0E5BF", "#DFE0DD", "#DECDE4"];
+    let num = 0;
+    let booksArr = books;
+    for (let i = 0; i < books.length; i++) {
+      if (num >= colorArr.length) {
+        num = 0;
+      }
+      booksArr[i].color = colorArr[num];
+      num++;
+    }
+    return booksArr;
+  }
 
   const [fictionBookList, setFictionBookList] = useState([]);
   const [nonFictionBookList, setNonFictionBookList] = useState([]);
@@ -29,7 +43,7 @@ function Bestseller() {
 
   return (
     <div className="nyt-bestseller">
-      <h1>NYTimes Hardcover Fiction Bestseller</h1>
+      <div class="genre">NYTimes Hardcover Fiction Bestseller</div>
       <div class="carousel-container">
         <div class="carousel-slide">
           {fictionBookList.map((book) => (
@@ -40,11 +54,12 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              color={book.color}
             />
           ))}
         </div>
       </div>
-      <h1>NYTimes Hardcover Non-Fiction Bestseller</h1>
+      <div class="genre">NYTimes Hardcover Non-Fiction Bestseller</div>
       <div class="carousel-container">
         <div class="carousel-slide">
           {nonFictionBookList.map((book) => (
@@ -55,11 +70,12 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              color={book.color}
             />
           ))}
         </div>
       </div>
-      <h1>NYTimes Chilren's Picture Bestseller</h1>
+      <div class="genre">NYTimes Chilren's Picture Bestseller</div>
       <div class="carousel-container">
         <div class="carousel-slide">
           {pictureBookList.map((book) => (
@@ -70,6 +86,7 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              color={book.color}
             />
           ))}
         </div>

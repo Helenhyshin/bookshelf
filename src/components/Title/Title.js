@@ -5,7 +5,7 @@ function Title() {
   return (
     <div className="title">
       <form className="title-form">
-        <input placeholder="search by title, author, or genre" />
+        <input placeholder="Search by title, author, or genre" />
         <button>Search</button>
       </form>
     </div>

@@ -8,16 +8,23 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <AppBar position="sticky" className="navbar" color="black">
-      <Toolbar>
-        <Link to="/" className="nav-links">
-          <BsBook />
-        </Link>
-        <Link to="/profile" className="nav-links">
-          My Page
-        </Link>
-        <Link to="/bestseller" className="nav-links">
-          Bestseller Page
-        </Link>
+      <Toolbar className="toolbar">
+        <div className="links">
+          <Link to="/profile" className="nav-links-my-page">
+            My Shelf
+          </Link>
+          <Link to="/bestseller" className="nav-links-bestseller">
+            Bestsellers
+          </Link>
+        </div>
+
+        <div class="header-title">bookshelf</div>
+
+        <div className="book">
+          <Link to="/" className="book-icon">
+            <BsBook />
+          </Link>
+        </div>
       </Toolbar>
     </AppBar>
   );
