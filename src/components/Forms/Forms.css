@@ -1,0 +1,48 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  background-color: rgb(238, 236, 235);
+}
+
+.log-in-img {
+  width: 600px;
+  display: block;
+}
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.log-in-form button {
+  background-color: #c7c1c1;
+  width: 500px;
+  height: 50px;
+  font-size: medium;
+}
+
+.log-in-form input {
+  width: 500px;
+  height: 50px;
+}
+
+input:focus {
+  outline-color: rgb(152, 205, 240);
+  outline-width: 5px;
+}
+
+.log-in-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+p {
+  display: inline;
+}

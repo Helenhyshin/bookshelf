@@ -3,7 +3,16 @@ import "./Card.css";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 function Card(props) {
-  const { image, title, author, amazon, rank, weeksOnList, color } = props;
+  const {
+    image,
+    title,
+    author,
+    amazon,
+    rank,
+    weeksOnList,
+    description,
+    color,
+  } = props;
 
   return (
     <div className="book-card" style={{ backgroundColor: color }}>
@@ -17,9 +26,12 @@ function Card(props) {
           <h2>{title}</h2>
           <p>by: {author}</p>
         </div>
-        <div className="rank-week">
-          <p>Current rank: {rank}</p>
-          <p>Weeks on list: {weeksOnList}</p>
+        <div className="details">
+          <div className="rank-week">
+            <p>Current rank: {rank}</p>
+            <p>Weeks on list: {weeksOnList}</p>
+          </div>
+          <p>{description}</p>
         </div>
         <AiFillPlusCircle
           style={{

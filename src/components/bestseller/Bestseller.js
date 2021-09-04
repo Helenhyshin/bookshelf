@@ -40,7 +40,7 @@ function Bestseller() {
   const [fictionBookList, setFictionBookList] = useState([]);
   const [nonFictionBookList, setNonFictionBookList] = useState([]);
   const [pictureBookList, setPictureBookList] = useState([]);
-
+  console.log(fictionBookList);
   return (
     <div className="nyt-bestseller">
       <div class="genre">NYTimes Hardcover Fiction Bestseller</div>
@@ -54,6 +54,7 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              description={book.description}
               color={book.color}
             />
           ))}
@@ -70,6 +71,7 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              description={book.description}
               color={book.color}
             />
           ))}
@@ -86,6 +88,7 @@ function Bestseller() {
               amazon={book.amazon_product_url}
               rank={book.rank}
               weeksOnList={book.weeks_on_list}
+              description={book.description}
               color={book.color}
             />
           ))}

@@ -2,7 +2,6 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import "./Navbar.css";
-import { BsBook } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -20,9 +19,12 @@ function Navbar() {
 
         <div class="header-title">bookshelf</div>
 
-        <div className="book">
-          <Link to="/" className="book-icon">
-            <BsBook />
+        <div className="login">
+          <Link to="/login">
+            <button>Log In</button>
+          </Link>
+          <Link to="/signup">
+            <button>Sign Up</button>
           </Link>
         </div>
       </Toolbar>

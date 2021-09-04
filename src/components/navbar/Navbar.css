@@ -21,7 +21,6 @@
 .header-title {
   padding: 10px;
   position: relative;
-  right: 100px;
   font-weight: 1000;
 }
 
@@ -29,13 +28,28 @@
   text-align: right;
 }
 
-.book-icon {
-  padding-top: 10px;
-}
-
 .nav-links-my-page,
-.nav-links-bestseller,
-.book-icon {
+.nav-links-bestseller {
   text-decoration: none;
   color: grey;
+}
+
+.nav-links-my-page:hover {
+  color: #686565;
+  font-weight: 500;
+}
+.nav-links-bestseller:hover {
+  font-weight: 500;
+  color: #686565;
+}
+
+.login button {
+  background-color: #c7c1c1;
+  height: 35px;
+  width: 100px;
+  margin: 3px;
+}
+
+button:hover {
+  background-color: #a19e9e;
 }
