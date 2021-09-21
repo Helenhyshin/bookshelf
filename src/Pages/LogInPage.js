@@ -1,10 +1,12 @@
 import React from "react";
 import LogInForm from "../components/Forms/LogInForm";
 
-const LogInPage = () => {
+const LogInPage = (props) => {
+  const { userList } = props;
+  console.log(props);
   return (
     <div>
-      <LogInForm />
+      <LogInForm userList={userList} />
     </div>
   );
 };

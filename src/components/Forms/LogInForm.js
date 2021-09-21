@@ -3,9 +3,9 @@ import { FcGoogle } from "react-icons/fc";
 import "./Forms.css";
 import { Link } from "react-router-dom";
 
-function LogInForm() {
+function LogInForm(props) {
   const [userinfo, setUserinfo] = useState({ username: "", password: "" });
-
+  const { userList } = props;
   function handleChange(evt) {
     setUserinfo({
       ...userinfo,
@@ -15,6 +15,16 @@ function LogInForm() {
 
   function handleSubmit(evt) {
     evt.preventDefault();
+
+    userList.forEach((userList) => {
+      if (
+        userinfo.username === userList.email &&
+        userinfo.password === userList.password
+      ) {
+        console.log("cat");
+      }
+    });
+
     setUserinfo({ username: "", password: "" });
   }
 
@@ -47,7 +57,7 @@ function LogInForm() {
             value={userinfo.password}
             onChange={handleChange}
           />
-          <button>Log In</button>
+          <button onSubmit={handleSubmit}>Log In</button>
         </form>
         <p>Don't have an account?</p>
         <Link to="/signup">Sign Up</Link>

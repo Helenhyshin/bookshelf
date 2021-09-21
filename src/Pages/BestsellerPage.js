@@ -4,10 +4,10 @@ import Bestseller from "../components/Bestseller/Bestseller.js";
 
 const BestsellerPage = () => {
   return (
-    <div>
+    <>
       <Title />;
       <Bestseller />;
-    </div>
+    </>
   );
 };
 

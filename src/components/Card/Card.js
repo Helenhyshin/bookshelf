@@ -23,7 +23,7 @@ function Card(props) {
       </div>
       <div className="book-card-content">
         <div className="title-author">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
           <p>by: {author}</p>
         </div>
         <div className="details">

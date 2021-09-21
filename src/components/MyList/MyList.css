@@ -1,12 +1,16 @@
 .my-list {
-  margin: 50px;
+  display: flex;
   text-align: left;
+  background-image: url("https://media.istockphoto.com/photos/shelf-picture-id1015260324?k=20&m=1015260324&s=612x612&w=0&h=253sWd6wf3ukbyMeMcfPWVpFsxM7-1oiJ5EnQqD3dnE=");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 750px;
 }
 
 .carousel-container {
   margin: auto;
   overflow: scroll;
-  margin-bottom: 50px;
 }
 
 .carousel-slide {

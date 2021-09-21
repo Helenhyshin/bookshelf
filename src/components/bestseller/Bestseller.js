@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./Bestseller.css";
 import {
   fetchHCFictionBestseller,
@@ -43,9 +44,9 @@ function Bestseller() {
   console.log(fictionBookList);
   return (
     <div className="nyt-bestseller">
-      <div class="genre">NYTimes Hardcover Fiction Bestseller</div>
-      <div class="carousel-container">
-        <div class="carousel-slide">
+      <div className="genre">NYTimes Hardcover Fiction Bestseller</div>
+      <div className="carousel-container">
+        <div className="carousel-slide">
           {fictionBookList.map((book) => (
             <Card
               title={book.title}
@@ -58,11 +59,17 @@ function Bestseller() {
               color={book.color}
             />
           ))}
+          <button class="btn btn--left">
+            <BsChevronLeft className="btn-icon" />
+          </button>
+          <button class="btn btn--right">
+            <BsChevronRight className="btn-icon" />
+          </button>
         </div>
       </div>
-      <div class="genre">NYTimes Hardcover Non-Fiction Bestseller</div>
-      <div class="carousel-container">
-        <div class="carousel-slide">
+      <div className="genre">NYTimes Hardcover Non-Fiction Bestseller</div>
+      <div className="carousel-container">
+        <div className="carousel-slide">
           {nonFictionBookList.map((book) => (
             <Card
               title={book.title}
@@ -75,11 +82,17 @@ function Bestseller() {
               color={book.color}
             />
           ))}
+          <button class="btn btn--left">
+            <BsChevronLeft className="btn-icon" />
+          </button>
+          <button class="btn btn--right">
+            <BsChevronRight className="btn-icon" />
+          </button>
         </div>
       </div>
-      <div class="genre">NYTimes Chilren's Picture Bestseller</div>
-      <div class="carousel-container">
-        <div class="carousel-slide">
+      <div className="genre">NYTimes Chilren's Picture Bestseller</div>
+      <div className="carousel-container">
+        <div className="carousel-slide">
           {pictureBookList.map((book) => (
             <Card
               title={book.title}
@@ -92,6 +105,12 @@ function Bestseller() {
               color={book.color}
             />
           ))}
+          <button class="btn btn--left">
+            <BsChevronLeft className="btn-icon" />
+          </button>
+          <button class="btn btn--right">
+            <BsChevronRight className="btn-icon" />
+          </button>
         </div>
       </div>
     </div>
